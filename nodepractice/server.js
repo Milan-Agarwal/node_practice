@@ -10,7 +10,7 @@ const Person = require('./person')
 app.get('/person', async function(req,res){
     try{
         const data = await Person.find()
-        console.log("data nikala gaya in server.js")
+        console.log("data nikala gaya from database in server.js")
         res.status(200).json(data)
     }
     catch(err)
@@ -33,7 +33,7 @@ app.post('/person',async function(req,res){
     }
 })
 
-const personRouter = require('/personRoutes')
+const personRouter = require('./personRoutes')
 
 app.use('/person',personRouter)
 
